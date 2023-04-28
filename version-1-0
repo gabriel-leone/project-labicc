@@ -1,0 +1,100 @@
+#include <stdio.h>
+
+void novoUsuario()                  // função de cadastro de usuario
+{
+    printf("teste 1");
+}
+
+void novosUsuarios()               // função de cadastro de varios usuarios
+{
+    printf("teste 2");
+}
+
+void buscaUsuario()                // função de busca de usuários
+{
+    printf("teste 3");  
+}
+
+void transferencia()               // função de transferencia entre usuarios
+{
+    printf("teste 4");    
+}
+
+void remocaoUsuario()             // função de remoção de usuarios
+{
+    printf("teste 5");    
+}
+
+
+int main()
+{
+    struct usuarios {
+        char nome[100];
+        int idade;
+        float saldo;
+    };
+    
+    
+    
+    
+    
+    printf("MENU\n\n");                              // display de menu
+    printf("1. Inserção de um Novo Usuario\n");
+    printf("2. Inserção de Varios Usuarios\n");
+    printf("3. Busca de um Usuario por ID\n");
+    printf("4. Transferencias Entre Usuarios\n");
+    printf("5. Remocao de um Usuario por ID");
+    
+    int input = -1;                                       // recebe valor inicial
+    printf("\n\n\nDigite o número da opcao desejada: ");
+    scanf("%d",&input);
+    
+    
+    while (input < 1 && input > 5)                       // força o usuario a dar um input valido
+    {
+        printf("\nValor invalido. Insira novamente: \n");
+        scanf("%d",&input);
+    }
+    
+    if (input == 1)                      // chama a função de cadastro de usuario
+    {
+        // novoUsuario;
+        struct usuario num1;
+        scanf("%100[^,],%d,%f",&num1.nome,&num1.idade,&num1.saldo);
+        printf("Nome: %s\nIdade: %d\nSaldo: %f",num1.nome,num1.idade,num1.saldo);
+    }
+    
+    if (input == 2)                     // chama a função de cadastro de varios usuarios
+    {
+        // novosUsuarios;
+        int n;
+        printf("Digite quantos usuarios serao inseridos: \n");
+        scanf("%d",&n);
+        
+        for (int i = 0; i < n; i++)
+        {
+            struct usuario num[i];
+            scanf("%100[^,],%d,%f",&num[i].nome,&num[i].idade,&num[i].saldo);
+            printf("Nome: %s\nIdade: %d\nSaldo: %f",num[i].nome,num[i].idade,num[i].saldo);
+        }
+    }
+    
+    if (input == 3)                     // chama a função de busca de usuários
+    {
+        printf("Digite o usuario desejado: \n");
+        int k;
+        scanf("%d",k);
+        printf("Nome: %s\nIdade: %d\nSaldo: %f",num[k].nome,num[k].idade,num[k].saldo);
+    }
+    
+    if (input == 4)                     // chama a função de transferencia entre usuarios
+    {
+        transferencia;
+    }
+    
+    if (input == 5)                     // chama a função de remoção de usuarios
+    {
+        remocaoUsuario;
+    }
+}
+
